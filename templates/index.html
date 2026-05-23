@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Weighted Least Squares</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+</head>
+
+<body>
+
+<nav>
+
+    <a href="/">Home</a>
+
+    <a href="/calculator">Calculator</a>
+
+    <a href="/examples">Examples</a>
+
+</nav>
+
+<div class="container">
+
+    <h1>Weighted Least Squares</h1>
+
+    <div class="card">
+
+        <h2>Method Discussion</h2>
+
+        <p>
+            Weighted Least Squares (WLS) is a statistical and numerical
+            method used to determine the best-fit linear equation when
+            different data points have different levels of importance
+            or reliability. Unlike Ordinary Least Squares, which treats all observations
+            equally, Weighted Least Squares assigns a specific weight
+            to each data point.
+        </p>
+
+        <p>
+            Observations with larger weights contribute more significantly
+            to the final regression line, while observations with smaller
+            weights have less influence. This method is particularly useful when the data contains
+            unequal variances, measurement errors, or varying confidence
+            levels among observations.
+        </p>
+
+        <p>
+            The general Weighted Least Squares model is:
+        </p>
+
+        <div class="result-box">
+
+            \[
+            y = a + bx
+            \]
+
+        </div>
+
+        <h2>Where:</h2>
+
+        <ul>
+
+            <li>\(a\) = intercept</li>
+
+            <li>\(b\) = slope</li>
+
+            <li>\(x\) = independent variable</li>
+
+            <li>\(y\) = dependent variable</li>
+
+        </ul>
+
+        <h2>Slope Formula</h2>
+
+        <div class="result-box">
+
+            \[
+            b =
+            \frac{
+            (\Sigma w)(\Sigma wxy)
+            -
+            (\Sigma wx)(\Sigma wy)
+            }
+            {
+            (\Sigma w)(\Sigma wx^2)
+            -
+            (\Sigma wx)^2
+            }
+            \]
+
+        </div>
+
+        <h2>Intercept Formula</h2>
+
+        <div class="result-box">
+
+            \[
+            a =
+            \frac{
+            \Sigma wy - b(\Sigma wx)
+            }
+            {
+            \Sigma w
+            }
+            \]
+
+        </div>
+
+        <h2>Applications</h2>
+
+        <ul>
+
+            <li>Engineering measurements</li>
+
+            <li>Machine learning</li>
+
+            <li>Economics and forecasting</li>
+
+            <li>Physics experiments</li>
+
+            <li>Statistical analysis</li>
+
+            <li>Data fitting and prediction</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

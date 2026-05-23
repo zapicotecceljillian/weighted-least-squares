@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Weighted Least Squares Calculator</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='style.css') }}">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+</head>
+
+<body>
+
+<nav>
+
+    <a href="/">Home</a>
+
+    <a href="/calculator">Calculator</a>
+
+    <a href="/examples">Examples</a>
+
+</nav>
+
+<div class="container">
+
+<h1>Weighted Least Squares Calculator</h1>
+
+<div class="card">
+
+<p>
+
+Enter the values separated by commas.
+
+</p>
+
+<form method="POST">
+
+<label>X Values</label>
+
+<input type="text"
+name="x"
+placeholder="1,2,3,4">
+
+<label>Y Values</label>
+
+<input type="text"
+name="y"
+placeholder="2,5,7,10">
+
+<label>Weights</label>
+
+<input type="text"
+name="w"
+placeholder="1,2,1,3">
+
+<button type="submit">
+
+Calculate
+
+</button>
+
+</form>
+
+</div>
+
+{% if error %}
+
+<div class="result-box">
+
+<h2>Error</h2>
+
+<p>{{ error }}</p>
+
+</div>
+
+{% endif %}
+
+{% if result %}
+
+<div class="result-box">
+
+<h2>Computed Results</h2>
+
+<p>\[
+\Sigma w = {{ result.Sw }}
+\]</p>
+
+<p>\[
+\Sigma wx = {{ result.Swx }}
+\]</p>
+
+<p>\[
+\Sigma wy = {{ result.Swy }}
+\]</p>
+
+<p>\[
+\Sigma wxy = {{ result.Swxy }}
+\]</p>
+
+<p>\[
+\Sigma wx^2 = {{ result.Swx2 }}
+\]</p>
+
+<p>\[
+b = {{ result.b }}
+\]</p>
+
+<p>\[
+a = {{ result.a }}
+\]</p>
+
+<h2>Final Equation</h2>
+
+<p>
+
+\[
+{{ result.equation }}
+\]
+
+</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

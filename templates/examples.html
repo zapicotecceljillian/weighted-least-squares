@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Worked Examples</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+</head>
+
+<body>
+
+<nav>
+
+    <a href="/">Home</a>
+
+    <a href="/calculator">Calculator</a>
+
+    <a href="/examples">Examples</a>
+
+</nav>
+
+<div class="container">
+
+<h1>Worked Examples</h1>
+
+<div class="card">
+
+<h2>Example 1</h2>
+
+<p><b>Given:</b></p>
+
+<p>\[
+x = [1,2,3,4]
+\]</p>
+
+<p>\[
+y = [2,5,7,10]
+\]</p>
+
+<p>\[
+w = [1,2,1,3]
+\]</p>
+
+<h2>Compute the Summations</h2>
+
+<div class="result-box">
+
+\[
+\Sigma w = 1+2+1+3 = 7
+\]
+
+\[
+\Sigma wx = 1+4+3+12 = 20
+\]
+
+\[
+\Sigma wy = 2+10+7+30 = 49
+\]
+
+\[
+\Sigma wxy = 2+20+21+120 = 163
+\]
+
+\[
+\Sigma wx^2 = 1+8+9+48 = 66
+\]
+
+</div>
+
+<h2>Compute the Slope</h2>
+
+<p>Formula:</p>
+
+<div class="result-box">
+
+\[
+b =
+\frac{
+(\Sigma w)(\Sigma wxy)
+-
+(\Sigma wx)(\Sigma wy)
+}
+{
+(\Sigma w)(\Sigma wx^2)
+-
+(\Sigma wx)^2
+}
+\]
+
+</div>
+
+<p>Substitute the values:</p>
+
+<div class="result-box">
+
+\[
+b =
+\frac{
+(7)(163)
+-
+(20)(49)
+}
+{
+(7)(66)
+-
+(20)^2
+}
+\]
+
+\[
+b =
+\frac{
+1141 - 980
+}
+{
+462 - 400
+}
+\]
+
+\[
+b =
+\frac{
+161
+}{
+62
+}
+=
+2.59677
+\]
+
+</div>
+
+<h2>Compute the Intercept</h2>
+
+<p>Formula:</p>
+
+<div class="result-box">
+
+\[
+a =
+\frac{
+\Sigma wy - b(\Sigma wx)
+}
+{
+\Sigma w
+}
+\]
+
+</div>
+
+<p>Substitute the values:</p>
+
+<div class="result-box">
+
+\[
+a =
+\frac{
+49 - (2.59677)(20)
+}
+{
+7
+}
+\]
+
+\[
+a =
+\frac{
+49 - 51.93540
+}
+{
+7
+}
+\]
+
+\[
+a =
+-0.41935
+\]
+
+</div>
+
+<h2>Final Equation</h2>
+
+<div class="result-box">
+
+\[
+y = -0.41935 + 2.59677x
+\]
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Example 2</h2>
+
+<p><b>Given:</b></p>
+
+<p>\[
+x = [2,4,6,8]
+\]</p>
+
+<p>\[
+y = [5,8,12,15]
+\]</p>
+
+<p>\[
+w = [1,3,2,4]
+\]</p>
+
+<h2>Compute the Summations</h2>
+
+<div class="result-box">
+
+\[
+\Sigma w = 1+3+2+4 = 10
+\]
+
+\[
+\Sigma wx = 2+12+12+32 = 58
+\]
+
+\[
+\Sigma wy = 5+24+24+60 = 113
+\]
+
+\[
+\Sigma wxy = 10+96+144+480 = 730
+\]
+
+\[
+\Sigma wx^2 = 4+48+72+256 = 380
+\]
+
+</div>
+
+<h2>Compute the Slope</h2>
+
+<div class="result-box">
+
+\[
+b =
+\frac{
+(10)(730)
+-
+(58)(113)
+}
+{
+(10)(380)
+-
+(58)^2
+}
+\]
+
+\[
+b =
+\frac{
+7300 - 6554
+}
+{
+3800 - 3364
+}
+\]
+
+\[
+b =
+\frac{
+746
+}{
+436
+}
+=
+1.71101
+\]
+
+</div>
+
+<h2>Compute the Intercept</h2>
+
+<div class="result-box">
+
+\[
+a =
+\frac{
+113 - (1.71101)(58)
+}
+{
+10
+}
+\]
+
+\[
+a =
+\frac{
+113 - 99.23858
+}
+{
+10
+}
+\]
+
+\[
+a =
+1.37615
+\]
+
+</div>
+
+<h2>Final Equation</h2>
+
+<div class="result-box">
+
+\[
+y = 1.37615 + 1.71101x
+\]
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
